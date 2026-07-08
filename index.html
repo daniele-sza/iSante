@@ -154,6 +154,7 @@ header.light .hamburger span{background:var(--dark)}
 /* ══════════════════════════════
    SLIDE 0 — HOME
 ══════════════════════════════ */
+#s0 .inner{justify-content:flex-start;padding-top:9.5rem}
 .home-wrap{position:relative;z-index:2;max-width:820px}
 .home-pill{
   display:inline-flex;align-items:center;gap:.55rem;
@@ -169,8 +170,8 @@ header.light .hamburger span{background:var(--dark)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
 .home-h1{
   font-family:'Inter',sans-serif;
-  font-size:clamp(3.2rem,6.2vw,5.9rem);
-  font-weight:500;line-height:1.06;letter-spacing:-.03em;
+  font-size:clamp(2.4rem,4.4vw,4.2rem);
+  font-weight:500;line-height:1.1;letter-spacing:-.03em;
   color:var(--white);margin-bottom:1.4rem;
 }
 .home-h1 em{font-style:italic;color:rgba(252,252,252,.55)}
@@ -547,6 +548,7 @@ header.light .hamburger span{background:var(--dark)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
+  #s0 .inner{padding-top:7rem}
   header{padding:.9rem 1.75rem}
   nav{display:none}
   .hamburger{display:flex}
