@@ -6,7 +6,7 @@
 <title>Instituto Isanté | Saúde de Alto Padrão na Amazônia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -18,7 +18,7 @@
   --muted:rgba(10,48,40,0.55);
   --trans:620ms cubic-bezier(0.77,0,0.175,1);
 }
-html{font-size:16px}
+html{font-size:19px}
 body{
   font-family:'Inter',sans-serif;
   background:var(--white);
@@ -51,19 +51,14 @@ header.light{
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
 }
-.logo{text-decoration:none;display:flex;flex-direction:column;gap:.05rem}
-.logo-name{
-  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;
-  letter-spacing:.04em;transition:color 300ms;
+.logo{text-decoration:none;display:flex;align-items:center}
+.logo-chip{
+  background:#fff;border-radius:10px;padding:.42rem .9rem;
+  display:flex;align-items:center;transition:box-shadow 300ms;
 }
-header.dark .logo-name{color:var(--white)}
-header.light .logo-name{color:var(--dark)}
-.logo-sub{
-  font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
-  transition:color 300ms;
-}
-header.dark .logo-sub{color:rgba(252,252,252,.45)}
-header.light .logo-sub{color:var(--muted)}
+header.dark .logo-chip{box-shadow:0 1px 4px rgba(0,0,0,.18)}
+header.light .logo-chip{box-shadow:none}
+.logo-img{height:32px;width:auto;display:block}
 
 nav{display:flex;gap:2.25rem;align-items:center}
 nav a{
@@ -89,7 +84,7 @@ header.light .hamburger span{background:var(--dark)}
 }
 .mob-overlay.open{display:flex}
 .mob-overlay a{
-  font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:500;
+  font-family:'Inter',sans-serif;font-size:1.9rem;font-weight:500;
   color:var(--white);text-decoration:none;opacity:.8;transition:opacity 200ms;cursor:pointer;
 }
 .mob-overlay a:hover{opacity:1}
@@ -177,14 +172,14 @@ header.light .hamburger span{background:var(--dark)}
 }
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
 .home-h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,5.5vw,5.2rem);
+  font-family:'Inter',sans-serif;
+  font-size:clamp(3.2rem,6.2vw,5.9rem);
   font-weight:500;line-height:1.06;letter-spacing:-.03em;
   color:var(--white);margin-bottom:1.4rem;
 }
 .home-h1 em{font-style:italic;color:rgba(252,252,252,.55)}
 .home-p{
-  font-size:clamp(.9rem,1.2vw,1.05rem);
+  font-size:clamp(1rem,1.35vw,1.18rem);
   color:rgba(252,252,252,.58);
   line-height:1.7;max-width:520px;margin-bottom:2.5rem;
 }
@@ -202,7 +197,7 @@ header.light .hamburger span{background:var(--dark)}
   border-top:1px solid rgba(252,252,252,.09);
 }
 .kpi-val{
-  font-family:'Playfair Display',serif;font-size:2.1rem;
+  font-family:'Inter',sans-serif;font-size:2.1rem;
   font-weight:500;color:var(--white);line-height:1;
 }
 .kpi-lbl{
@@ -218,7 +213,7 @@ header.light .hamburger span{background:var(--dark)}
   gap:4.5rem;align-items:center;height:100%;
 }
 .about-p{
-  font-size:clamp(.85rem,1.1vw,.97rem);
+  font-size:clamp(.95rem,1.25vw,1.08rem);
   color:rgba(10,48,40,.65);line-height:1.75;max-width:440px;
 }
 .kpi-row{
@@ -280,7 +275,7 @@ header.light .hamburger span{background:var(--dark)}
   margin-bottom:1.75rem;
 }
 .tl-yr-big{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:3.6rem;font-weight:500;color:var(--white);line-height:1;
 }
 .tl-yr-sub{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(252,252,252,.38)}
@@ -309,7 +304,7 @@ header.light .hamburger span{background:var(--dark)}
   border-radius:12px;margin-top:1.75rem;
 }
 .pub-n{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:2.1rem;font-weight:500;color:var(--white);line-height:1;
 }
 .pub-t{
@@ -349,7 +344,7 @@ header.light .hamburger span{background:var(--dark)}
   background:var(--light);border:1px solid var(--border);border-radius:11px;
 }
 .pubmed-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1rem;color:var(--green);margin-top:.35rem;
 }
 .pubmed-desc{font-size:.77rem;color:var(--muted);margin-top:.4rem;line-height:1.5}
@@ -362,7 +357,7 @@ header.light .hamburger span{background:var(--dark)}
   align-items:flex-end;margin-bottom:2.25rem;
 }
 .total-val{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.9rem;font-weight:500;color:var(--white);text-align:right;
 }
 .total-lbl{
@@ -393,7 +388,7 @@ header.light .hamburger span{background:var(--dark)}
 .ctag-a{background:rgba(96,165,250,.13);color:#60a5fa}
 .ctag-f{background:rgba(251,191,36,.13);color:#fbbf24}
 .pcard-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.05rem;font-weight:500;
   color:var(--white);line-height:1.25;margin-bottom:.65rem;
 }
@@ -407,7 +402,7 @@ header.light .hamburger span{background:var(--dark)}
   color:rgba(252,252,252,.32);margin-bottom:.15rem;
 }
 .pcard-val{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.2rem;font-weight:500;color:var(--white);
 }
 .pcard-metric2{margin-top:.65rem}
@@ -429,7 +424,7 @@ header.light .hamburger span{background:var(--dark)}
   border-color:transparent;grid-row:span 2;
 }
 .rcard-name{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.25rem;font-weight:500;line-height:1.25;
 }
 .rcard-dark .rcard-name{color:var(--white)}
@@ -441,7 +436,7 @@ header.light .hamburger span{background:var(--dark)}
   padding:1.1rem 1.25rem;
   background:rgba(27,98,79,.28);
   border-radius:10px;border:1px solid rgba(27,98,79,.4);
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-style:italic;font-size:.88rem;
   color:rgba(252,252,252,.82);line-height:1.55;
   margin-top:auto;
@@ -449,7 +444,7 @@ header.light .hamburger span{background:var(--dark)}
 .m-row{display:flex;gap:1.5rem;margin-top:.5rem}
 .m-item{display:flex;flex-direction:column;gap:.12rem}
 .m-val{
-  font-family:'Playfair Display',serif;
+  font-family:'Inter',sans-serif;
   font-size:1.4rem;font-weight:500;
 }
 .rcard-dark .m-val{color:var(--white)}
@@ -465,15 +460,34 @@ header.light .hamburger span{background:var(--dark)}
 .diff-list li::before{content:'—';color:var(--green);flex-shrink:0}
 
 /* ══════════════════════════════
-   SLIDE 6 — CONTATO
+   SLIDE 6 — PARCEIROS
+══════════════════════════════ */
+.partners-grid{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:1.1rem;margin-top:2.25rem;
+}
+.partner-card{
+  border:1px solid var(--border);border-radius:14px;
+  padding:1rem;background:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  height:108px;transition:all 250ms;
+}
+.partner-card:hover{
+  border-color:var(--green);background:var(--light);
+  transform:translateY(-3px);
+}
+.partner-card img{max-width:100%;max-height:58px;width:auto;height:auto;object-fit:contain}
+
+/* ══════════════════════════════
+   SLIDE 7 — CONTATO
 ══════════════════════════════ */
 .contact-grid{
   display:grid;grid-template-columns:1fr 1fr;
   gap:5.5rem;align-items:center;height:100%;
 }
 .cquote{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.2rem,2vw,1.7rem);
+  font-family:'Inter',sans-serif;
+  font-size:clamp(1.35rem,2.25vw,1.9rem);
   font-weight:400;font-style:italic;
   color:rgba(252,252,252,.78);line-height:1.5;
   margin-top:1.75rem;
@@ -536,12 +550,15 @@ header.light .hamburger span{background:var(--dark)}
   .res-grid{grid-template-columns:1fr;height:auto}
   .rcard-dark{grid-row:span 1}
   .home-kpis{flex-wrap:wrap;gap:1.5rem}
+  .partners-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:600px){
   .inner{padding:5rem 1.25rem 2.5rem}
   .port-cards{grid-template-columns:1fr}
   .port-head{flex-direction:column;align-items:flex-start;gap:.75rem}
   .prog-meta{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:repeat(3,1fr);gap:.75rem}
+  .partner-card{height:85px;padding:.65rem}
   .home-kpis{gap:1.25rem}
 }
 </style>
@@ -551,8 +568,7 @@ header.light .hamburger span{background:var(--dark)}
 <!-- HEADER -->
 <header id="hdr" class="dark">
   <a class="logo" href="#" onclick="go(0);return false">
-    <span class="logo-name">Isanté</span>
-    <span class="logo-sub">Instituto de Saúde</span>
+    <span class="logo-chip"><img class="logo-img" src="IMAGEM/iSant%C3%A9.png" alt="Instituto Isanté"></span>
   </a>
   <nav id="nav">
     <a onclick="go(1)" data-s="1">Quem Somos</a>
@@ -560,7 +576,8 @@ header.light .hamburger span{background:var(--dark)}
     <a onclick="go(3)" data-s="3">Ciência</a>
     <a onclick="go(4)" data-s="4">Portfólio</a>
     <a onclick="go(5)" data-s="5">Projetos</a>
-    <a onclick="go(6)" data-s="6">Contato</a>
+    <a onclick="go(6)" data-s="6">Parceiros</a>
+    <a onclick="go(7)" data-s="7">Contato</a>
   </nav>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -576,7 +593,8 @@ header.light .hamburger span{background:var(--dark)}
   <a onclick="mgo(3)">Ciência</a>
   <a onclick="mgo(4)">Portfólio</a>
   <a onclick="mgo(5)">Projetos</a>
-  <a onclick="mgo(6)">Contato</a>
+  <a onclick="mgo(6)">Parceiros</a>
+  <a onclick="mgo(7)">Contato</a>
 </div>
 
 <!-- SLIDES VIEWPORT -->
@@ -615,7 +633,7 @@ header.light .hamburger span{background:var(--dark)}
     <div class="about-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:var(--green)">Quem Somos</div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em saúde cardiovascular</h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em saúde cardiovascular</h2>
         <p class="about-p" style="margin-bottom:1rem">O <strong>Grupo Silvestre Santé</strong> é uma organização de saúde com base científica sólida, atuação clínica de referência e compromisso com a transformação social na Amazônia.</p>
         <p class="about-p">Integramos prevenção, assistência, formação médica e pesquisa aplicada em um modelo único de cuidado integral — com inserção em bases científicas internacionais como o PubMed e presença no interior do Acre.</p>
         <div class="kpi-row">
@@ -671,7 +689,7 @@ header.light .hamburger span{background:var(--dark)}
   <div class="glow" style="opacity:.6"></div>
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.4)">Linha do Tempo · 2017 – 2025</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.5rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Ações de Impacto em Saúde</h2>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Ações de Impacto em Saúde</h2>
     <div class="tl-grid">
       <div class="tl-nav">
         <button class="yr-btn on" onclick="yr('t17',this)">2017 – 2020</button>
@@ -835,7 +853,7 @@ header.light .hamburger span{background:var(--dark)}
     <div class="sci-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:var(--green)">Ciência & Inovação</div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1rem">Produção Científica e Inovação em Cardiologia</h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1rem">Produção Científica e Inovação em Cardiologia</h2>
         <p style="font-size:.88rem;color:var(--muted);line-height:1.7;max-width:400px">Hub de produção científica aplicada com impacto direto em prática clínica, protocolos assistenciais, políticas de saúde e formação médica.</p>
         <div class="pub-badge">
           <div class="pub-n">+50</div>
@@ -902,7 +920,7 @@ header.light .hamburger span{background:var(--dark)}
     <div class="port-head">
       <div>
         <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Portfólio de Investimento em Saúde</div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Projetos Prontos para Captação</h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Projetos Prontos para Captação</h2>
       </div>
       <div>
         <div class="total-val">R$ 6,7 mi</div>
@@ -983,7 +1001,7 @@ header.light .hamburger span{background:var(--dark)}
 <section class="slide slide-tint" id="s5">
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:var(--green)">Projetos · Resultados · Indicadores</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">O que nos diferencia</h2>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">O que nos diferencia</h2>
     <div class="res-grid">
       <div class="rcard rcard-dark">
         <div class="t-label" style="color:rgba(252,252,252,.35)">Projeto Destaque</div>
@@ -1023,14 +1041,39 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 6 · CONTATO ━━ -->
-<section class="slide slide-dark" id="s6">
+<!-- ━━ 6 · PARCEIROS ━━ -->
+<section class="slide slide-light" id="s6">
+  <div class="inner">
+    <div class="section-eyebrow t-label" style="color:var(--green)">Rede de Apoio</div>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">Parceiros</h2>
+    <p class="about-p" style="margin-top:1rem">Instituições, empresas e apoiadores que caminham ao nosso lado na construção de um sistema de saúde mais forte na Amazônia.</p>
+    <div class="partners-grid">
+      <div class="partner-card"><img src="IMAGEM/1.png" alt="Parceiro 1"></div>
+      <div class="partner-card"><img src="IMAGEM/2.png" alt="Parceiro 2"></div>
+      <div class="partner-card"><img src="IMAGEM/3.png" alt="Parceiro 3"></div>
+      <div class="partner-card"><img src="IMAGEM/4.png" alt="Parceiro 4"></div>
+      <div class="partner-card"><img src="IMAGEM/5.png" alt="Parceiro 5"></div>
+      <div class="partner-card"><img src="IMAGEM/6.png" alt="Parceiro 6"></div>
+      <div class="partner-card"><img src="IMAGEM/7.png" alt="Parceiro 7"></div>
+      <div class="partner-card"><img src="IMAGEM/8.png" alt="Parceiro 8"></div>
+      <div class="partner-card"><img src="IMAGEM/9.png" alt="Parceiro 9"></div>
+      <div class="partner-card"><img src="IMAGEM/10.png" alt="Parceiro 10"></div>
+      <div class="partner-card"><img src="IMAGEM/11.png" alt="Parceiro 11"></div>
+      <div class="partner-card"><img src="IMAGEM/12.png" alt="Parceiro 12"></div>
+      <div class="partner-card"><img src="IMAGEM/13.png" alt="Parceiro 13"></div>
+      <div class="partner-card"><img src="IMAGEM/14.png" alt="Parceiro 14"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━ 7 · CONTATO ━━ -->
+<section class="slide slide-dark" id="s7">
   <div class="glow"></div>
   <div class="inner">
     <div class="contact-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Encerramento Institucional</div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Parceiros estratégicos para ampliar o impacto</h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Parceiros estratégicos para ampliar o impacto</h2>
         <blockquote class="cquote">"Nossa prática clínica é orientada pela ciência — e trabalhamos com ciência orientada para impacto na vida real."</blockquote>
         <ul class="seek-list">
           <li>Parceiros para captação e financiamento de projetos</li>
@@ -1103,11 +1146,12 @@ header.light .hamburger span{background:var(--dark)}
   <div class="dot d-light" onclick="go(4)"></div>
   <div class="dot d-light" onclick="go(5)"></div>
   <div class="dot d-light" onclick="go(6)"></div>
+  <div class="dot d-light" onclick="go(7)"></div>
 </div>
 
 <script>
-const N = 7;
-const DARK_SLIDES = new Set([0,2,4,6]);
+const N = 8;
+const DARK_SLIDES = new Set([0,2,4,7]);
 let cur = 0;
 let wLock = false;
 
