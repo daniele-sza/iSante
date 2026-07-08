@@ -51,14 +51,10 @@ header.light{
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
 }
-.logo{text-decoration:none;display:flex;align-items:center}
-.logo-chip{
-  background:#fff;border-radius:10px;padding:.42rem .9rem;
-  display:flex;align-items:center;transition:box-shadow 300ms;
-}
-header.dark .logo-chip{box-shadow:0 1px 4px rgba(0,0,0,.18)}
-header.light .logo-chip{box-shadow:none}
-.logo-img{height:32px;width:auto;display:block}
+.logo{text-decoration:none;display:flex;align-items:center;height:42px}
+.logo-img{height:42px;width:auto;display:none}
+header.dark .logo-img-w{display:block}
+header.light .logo-img-c{display:block}
 
 nav{display:flex;gap:2.25rem;align-items:center}
 nav a{
@@ -198,7 +194,7 @@ header.light .hamburger span{background:var(--dark)}
 }
 .kpi-val{
   font-family:'Inter',sans-serif;font-size:2.1rem;
-  font-weight:500;color:var(--white);line-height:1;
+  font-weight:800;color:var(--white);line-height:1;
 }
 .kpi-lbl{
   font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;
@@ -279,13 +275,28 @@ header.light .hamburger span{background:var(--dark)}
   font-size:3.6rem;font-weight:500;color:var(--white);line-height:1;
 }
 .tl-yr-sub{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(252,252,252,.38)}
-.programs{display:flex;flex-direction:column;gap:1rem}
+.programs{
+  display:flex;flex-direction:column;gap:1.1rem;
+  position:relative;padding-left:1.7rem;
+}
+.programs::before{
+  content:'';position:absolute;left:4px;top:12px;bottom:12px;
+  width:1px;background:rgba(252,252,252,.14);
+}
 .prog{
+  position:relative;
   padding:1.35rem 1.5rem;
   border:1px solid rgba(252,252,252,.07);
   border-radius:11px;background:rgba(252,252,252,.025);
+  transition:all 250ms;
 }
-.prog-name{font-size:.93rem;font-weight:600;color:var(--white);margin-bottom:.85rem}
+.prog::before{
+  content:'';position:absolute;left:-1.7rem;top:1.6rem;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--green);border:2px solid rgba(252,252,252,.85);
+}
+.prog:hover{background:rgba(27,98,79,.22);border-color:rgba(27,98,79,.5)}
+.prog-name{font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:.85rem;letter-spacing:-.005em}
 .prog-meta{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem}
 .meta-k{font-size:.65rem;letter-spacing:.11em;text-transform:uppercase;color:rgba(252,252,252,.32)}
 .meta-v{font-size:.8rem;color:rgba(252,252,252,.68);margin-top:.1rem}
@@ -305,7 +316,7 @@ header.light .hamburger span{background:var(--dark)}
 }
 .pub-n{
   font-family:'Inter',sans-serif;
-  font-size:2.1rem;font-weight:500;color:var(--white);line-height:1;
+  font-size:2.6rem;font-weight:800;color:var(--white);line-height:1;
 }
 .pub-t{
   font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
@@ -418,11 +429,13 @@ header.light .hamburger span{background:var(--dark)}
 .rcard{
   border:1px solid var(--border);border-radius:14px;
   padding:1.75rem;display:flex;flex-direction:column;gap:.85rem;
+  transition:all 250ms;
 }
 .rcard-dark{
   background:var(--dark);color:var(--white);
   border-color:transparent;grid-row:span 2;
 }
+.rcard-dark:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.3)}
 .rcard-name{
   font-family:'Inter',sans-serif;
   font-size:1.25rem;font-weight:500;line-height:1.25;
@@ -463,20 +476,20 @@ header.light .hamburger span{background:var(--dark)}
    SLIDE 6 — PARCEIROS
 ══════════════════════════════ */
 .partners-grid{
-  display:grid;grid-template-columns:repeat(7,1fr);
+  display:grid;grid-template-columns:repeat(5,1fr);
   gap:1.1rem;margin-top:2.25rem;
 }
 .partner-card{
   border:1px solid var(--border);border-radius:14px;
   padding:1rem;background:var(--white);
   display:flex;align-items:center;justify-content:center;
-  height:108px;transition:all 250ms;
+  height:140px;transition:all 250ms;
 }
 .partner-card:hover{
   border-color:var(--green);background:var(--light);
   transform:translateY(-3px);
 }
-.partner-card img{max-width:100%;max-height:58px;width:auto;height:auto;object-fit:contain}
+.partner-card img{width:140px;height:56px;max-width:100%}
 
 /* ══════════════════════════════
    SLIDE 7 — CONTATO
@@ -558,7 +571,8 @@ header.light .hamburger span{background:var(--dark)}
   .port-head{flex-direction:column;align-items:flex-start;gap:.75rem}
   .prog-meta{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:repeat(3,1fr);gap:.75rem}
-  .partner-card{height:85px;padding:.65rem}
+  .partner-card{height:100px;padding:.65rem}
+  .partner-card img{width:90px;height:36px}
   .home-kpis{gap:1.25rem}
 }
 </style>
@@ -568,7 +582,8 @@ header.light .hamburger span{background:var(--dark)}
 <!-- HEADER -->
 <header id="hdr" class="dark">
   <a class="logo" href="#" onclick="go(0);return false">
-    <span class="logo-chip"><img class="logo-img" src="IMAGEM/iSant%C3%A9.png" alt="Instituto Isanté"></span>
+    <img class="logo-img logo-img-w" src="IMAGEM/iSant%C3%A9%20BRANCO.png" alt="Instituto Isanté">
+    <img class="logo-img logo-img-c" src="IMAGEM/iSant%C3%A9.png" alt="Instituto Isanté">
   </a>
   <nav id="nav">
     <a onclick="go(1)" data-s="1">Quem Somos</a>
@@ -620,8 +635,8 @@ header.light .hamburger span{background:var(--dark)}
       <div class="home-kpis">
         <div><div class="kpi-val">+50</div><div class="kpi-lbl">Publicações Científicas</div></div>
         <div><div class="kpi-val">10+</div><div class="kpi-lbl">Programas Estruturados</div></div>
-        <div><div class="kpi-val">2012</div><div class="kpi-lbl">Início da Produção Científica</div></div>
-        <div><div class="kpi-val">~1k</div><div class="kpi-lbl">Pessoas Treinadas</div></div>
+        <div><div class="kpi-val">2017</div><div class="kpi-lbl">Início da Produção Científica</div></div>
+        <div><div class="kpi-val">~1000</div><div class="kpi-lbl">Pessoas Treinadas</div></div>
       </div>
     </div>
   </div>
@@ -633,11 +648,11 @@ header.light .hamburger span{background:var(--dark)}
     <div class="about-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:var(--green)">Quem Somos</div>
-        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em saúde cardiovascular</h2>
-        <p class="about-p" style="margin-bottom:1rem">O <strong>Grupo Silvestre Santé</strong> é uma organização de saúde com base científica sólida, atuação clínica de referência e compromisso com a transformação social na Amazônia.</p>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em <strong style="font-weight:800">saúde cardiovascular</strong></h2>
+        <p class="about-p" style="margin-bottom:1rem">O <strong>Grupo Silvestre Santé</strong> é um ecossistema com base científica sólida, atuação clínica de referência e compromisso com a transformação social na Amazônia.</p>
         <p class="about-p">Integramos prevenção, assistência, formação médica e pesquisa aplicada em um modelo único de cuidado integral — com inserção em bases científicas internacionais como o PubMed e presença no interior do Acre.</p>
         <div class="kpi-row">
-          <div class="kpi-g"><div class="kpi-val">2012</div><div class="kpi-lbl">Início das atividades</div></div>
+          <div class="kpi-g"><div class="kpi-val">2017</div><div class="kpi-lbl">Início das atividades</div></div>
           <div class="kpi-g"><div class="kpi-val">+50</div><div class="kpi-lbl">Publicações indexadas</div></div>
           <div class="kpi-g"><div class="kpi-val">5</div><div class="kpi-lbl">Projetos estruturados</div></div>
         </div>
@@ -688,12 +703,11 @@ header.light .hamburger span{background:var(--dark)}
 <section class="slide slide-dark" id="s2">
   <div class="glow" style="opacity:.6"></div>
   <div class="inner">
-    <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.4)">Linha do Tempo · 2017 – 2025</div>
+    <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.4)">Linha do Tempo · 2020 – 2025</div>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Ações de Impacto em Saúde</h2>
     <div class="tl-grid">
       <div class="tl-nav">
-        <button class="yr-btn on" onclick="yr('t17',this)">2017 – 2020</button>
-        <button class="yr-btn" onclick="yr('t20',this)">2020 – 2022</button>
+        <button class="yr-btn on" onclick="yr('t20',this)">2020 – 2022</button>
         <button class="yr-btn" onclick="yr('t23',this)">2023</button>
         <button class="yr-btn" onclick="yr('t24',this)">2024</button>
         <button class="yr-btn" onclick="yr('t25',this)">2025</button>
@@ -704,25 +718,7 @@ header.light .hamburger span{background:var(--dark)}
       </div>
       <div class="tl-content">
 
-        <div class="tl-entry on" id="t17">
-          <div class="tl-yr-head">
-            <div class="tl-yr-big">2017</div>
-            <div class="tl-yr-sub">Interiorização do Conhecimento</div>
-          </div>
-          <div class="programs">
-            <div class="prog">
-              <div class="prog-name">Palestras no Interior do Acre</div>
-              <div class="prog-meta">
-                <div><div class="meta-k">Locais</div><div class="meta-v">Acrelândia · Capixaba · Sena Madureira · Xapuri</div></div>
-                <div><div class="meta-k">Público</div><div class="meta-v">Gestores públicos, profissionais e comunidade</div></div>
-                <div><div class="meta-k">Impacto</div><div class="meta-v">Interiorização do conhecimento em saúde cardiovascular</div></div>
-                <div><div class="meta-k">Evidência</div><div class="meta-v">Registros fotográficos</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tl-entry" id="t20">
+        <div class="tl-entry on" id="t20">
           <div class="tl-yr-head">
             <div class="tl-yr-big">2020</div>
             <div class="tl-yr-sub">Atuação em Crise Sanitária</div>
@@ -1001,9 +997,9 @@ header.light .hamburger span{background:var(--dark)}
 <section class="slide slide-tint" id="s5">
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:var(--green)">Projetos · Resultados · Indicadores</div>
-    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">O que nos diferencia</h2>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">A oportunidade</h2>
     <div class="res-grid">
-      <div class="rcard rcard-dark">
+      <a class="rcard rcard-dark" href="pdf/iSante%20%282%29.pdf" target="_blank" rel="noopener" style="text-decoration:none;cursor:pointer">
         <div class="t-label" style="color:rgba(252,252,252,.35)">Projeto Destaque</div>
         <div class="rcard-name">Amazônia Sem Fronteiras</div>
         <div class="rcard-desc">Projeto de 24 meses integrando saúde cardiovascular em regiões de fronteira amazônica. Combina assistência clínica, formação de profissionais e pesquisa aplicada em contexto de alta vulnerabilidade.</div>
@@ -1012,7 +1008,11 @@ header.light .hamburger span{background:var(--dark)}
           <div class="m-item"><span class="m-val">24 meses</span><span class="m-lbl">Duração</span></div>
           <div class="m-item"><span class="m-val">Amazônia</span><span class="m-lbl">Região</span></div>
         </div>
-      </div>
+        <div style="margin-top:.25rem;display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;color:#4ade80">
+          Ver projeto completo (PDF)
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
       <div style="display:flex;flex-direction:column;gap:1.1rem">
         <div class="rcard rcard-light">
           <div class="t-label" style="color:var(--muted)">Diferencial Estratégico</div>
@@ -1203,8 +1203,23 @@ document.addEventListener('wheel', e=>{
 
 // Keyboard
 document.addEventListener('keydown', e=>{
-  if(e.key==='ArrowRight'||e.key==='ArrowDown') next();
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp') prev();
+  if(e.key==='ArrowRight'){ next(); return; }
+  if(e.key==='ArrowLeft'){ prev(); return; }
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+    const goingUp = e.key==='ArrowUp';
+    const slideEl = document.getElementById('s'+cur);
+    const sc = slideEl && (slideEl.querySelector('.tl-content') || slideEl.querySelector('.inner'));
+    if(sc && sc.scrollHeight > sc.clientHeight){
+      const atTop = sc.scrollTop <= 1;
+      const atBot = sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 2;
+      if((goingUp && !atTop) || (!goingUp && !atBot)){
+        e.preventDefault();
+        sc.scrollBy({top: goingUp ? -120 : 120, behavior:'smooth'});
+        return;
+      }
+    }
+    goingUp ? prev() : next();
+  }
 });
 
 // Touch
