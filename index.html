@@ -156,14 +156,14 @@ header.light .hamburger span{background:var(--dark)}
 ══════════════════════════════ */
 #s0 .inner{justify-content:flex-start;padding-top:9.5rem}
 .home-wrap{
-  position:relative;z-index:2;max-width:1150px;
-  display:grid;grid-template-columns:1.05fr .95fr;
+  position:relative;z-index:2;max-width:1300px;
+  display:grid;grid-template-columns:.9fr 1.25fr;
   gap:3.5rem;align-items:center;
 }
 .home-photo{
   border-radius:20px;overflow:hidden;
   border:1px solid rgba(252,252,252,.14);
-  aspect-ratio:4/5;
+  aspect-ratio:4/3;
 }
 .home-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .home-pill{
@@ -307,11 +307,13 @@ header.light .hamburger span{background:var(--dark)}
 }
 .yr-btn:hover{background:rgba(252,252,252,.05);color:rgba(252,252,252,.75)}
 .yr-btn.on{background:rgba(27,98,79,.45);color:var(--white)}
-.tl-hint{
-  margin-top:1.5rem;padding:1.1rem;
-  border:1px solid rgba(252,252,252,.07);border-radius:10px;
-  background:rgba(252,252,252,.02);
-  font-size:.78rem;color:rgba(252,252,252,.45);line-height:1.65;
+.tl-photos{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:.55rem;margin-top:1.5rem;
+}
+.tl-photos img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;display:block;
+  border-radius:9px;border:1px solid rgba(252,252,252,.12);
 }
 .tl-content{
   overflow-y:auto;max-height:calc(100vh - 180px);
@@ -689,8 +691,8 @@ header.light .hamburger span{background:var(--dark)}
     <a onclick="go(3)" data-s="3">Ciência</a>
     <a onclick="go(4)" data-s="4">Portfólio</a>
     <a onclick="go(5)" data-s="5">Projetos</a>
-    <a onclick="go(6)" data-s="6">Contratos</a>
-    <a onclick="go(7)" data-s="7">Cooperação</a>
+    <a onclick="go(6)" data-s="6">Cooperação</a>
+    <a onclick="go(7)" data-s="7">Parceiros</a>
     <a onclick="go(8)" data-s="8">Contato</a>
   </nav>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
@@ -707,8 +709,8 @@ header.light .hamburger span{background:var(--dark)}
   <a onclick="mgo(3)">Ciência</a>
   <a onclick="mgo(4)">Portfólio</a>
   <a onclick="mgo(5)">Projetos</a>
-  <a onclick="mgo(6)">Contratos</a>
-  <a onclick="mgo(7)">Cooperação</a>
+  <a onclick="mgo(6)">Cooperação</a>
+  <a onclick="mgo(7)">Parceiros</a>
   <a onclick="mgo(8)">Contato</a>
 </div>
 
@@ -897,9 +899,13 @@ header.light .hamburger span{background:var(--dark)}
         <button class="yr-btn" onclick="yr('t23',this)">2023</button>
         <button class="yr-btn" onclick="yr('t24',this)">2024</button>
         <button class="yr-btn" onclick="yr('t25',this)">2025</button>
-        <div class="tl-hint">
-          <div class="t-label" style="color:rgba(252,252,252,.3);margin-bottom:.4rem">Síntese</div>
-          Atuação contínua combinando assistência · prevenção · educação · política pública
+        <div class="tl-photos">
+          <img src="IMAGEM/DSC01380-web.jpg" alt="Ação social Silvestre Santé">
+          <img src="IMAGEM/DSC00109-web.jpg" alt="Ação social Silvestre Santé">
+          <img src="IMAGEM/DSC00219-web.jpg" alt="Ação social Silvestre Santé">
+          <img src="IMAGEM/DSC01285-web.jpg" alt="Ação social Silvestre Santé">
+          <img src="IMAGEM/DSC01290-web.jpg" alt="Ação social Silvestre Santé">
+          <img src="IMAGEM/DSC01368%20(1)-web.jpg" alt="Ação social Silvestre Santé">
         </div>
       </div>
       <div class="tl-content">
@@ -1231,8 +1237,8 @@ header.light .hamburger span{background:var(--dark)}
 <section class="slide slide-dark" id="s6">
   <div class="glow" style="opacity:.6"></div>
   <div class="inner">
-    <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Portfólio Científico e Contratos Estratégicos</div>
-    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Contratos Estratégicos Vinculados</h2>
+    <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Portfólio Científico</div>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Cooperação Técnica</h2>
     <p class="contracts-intro">A narrativa institucional do iSanté ganha força quando apresentada dentro do Ecossistema Silvestre Santé, pois os contratos firmados pela Acurácia/Clínica Silvestre Santé demonstram maturidade técnico-regulatória, capacidade de participação em estudos multicêntricos e presença em agendas nacionais e internacionais de saúde.</p>
 
     <div class="contracts-wrap">
@@ -1290,7 +1296,7 @@ header.light .hamburger span{background:var(--dark)}
 <section class="slide slide-light" id="s7">
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:var(--green)">Rede de Apoio</div>
-    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">Cooperação Técnica com Parceiros</h2>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">Parceiros</h2>
     <p class="about-p" style="margin-top:1rem">Instituições, empresas e apoiadores que caminham ao nosso lado na construção de um sistema de saúde mais forte na Amazônia.</p>
     <div class="partners-grid">
       <div class="partner-card"><img src="IMAGEM/1.png" alt="Parceiro 1"></div>
