@@ -216,6 +216,7 @@ header.light .hamburger span{background:var(--dark)}
    SLIDE 1 — QUEM SOMOS + MISSÃO/VISÃO/VALORES
 ══════════════════════════════ */
 #s1 .inner{justify-content:flex-start;padding-top:6.5rem}
+#s2 .inner{justify-content:flex-start;padding-top:6.5rem}
 .about-grid{
   display:grid;grid-template-columns:1fr 1fr;
   gap:4.5rem;align-items:center;height:100%;
@@ -289,6 +290,10 @@ header.light .hamburger span{background:var(--dark)}
 }
 .value-name{font-size:.8rem;font-weight:700;color:var(--dark);margin-bottom:.25rem;line-height:1.3}
 .value-desc{font-size:.72rem;color:var(--muted);line-height:1.5}
+.eco-sub{color:var(--green);font-weight:500}
+.eco-list{list-style:none;display:flex;flex-direction:column;gap:.25rem;margin-top:.35rem}
+.eco-list li{font-size:.68rem;color:var(--muted);line-height:1.45;display:flex;align-items:flex-start;gap:.4rem}
+.eco-list li::before{content:'–';color:var(--green);flex-shrink:0}
 
 /* ══════════════════════════════
    SLIDE 2 — LINHA DO TEMPO
@@ -687,13 +692,14 @@ header.light .hamburger span{background:var(--dark)}
   </a>
   <nav id="nav">
     <a onclick="go(1)" data-s="1">Quem Somos</a>
-    <a onclick="go(2)" data-s="2">Linha do Tempo</a>
-    <a onclick="go(3)" data-s="3">Ciência</a>
-    <a onclick="go(4)" data-s="4">Portfólio</a>
-    <a onclick="go(5)" data-s="5">Projetos</a>
-    <a onclick="go(6)" data-s="6">Cooperação</a>
-    <a onclick="go(7)" data-s="7">Parceiros</a>
-    <a onclick="go(8)" data-s="8">Contato</a>
+    <a onclick="go(2)" data-s="2">Nosso Ecossistema</a>
+    <a onclick="go(3)" data-s="3">Linha do Tempo</a>
+    <a onclick="go(4)" data-s="4">Ciência</a>
+    <a onclick="go(5)" data-s="5">Portfólio</a>
+    <a onclick="go(6)" data-s="6">Congresso 2026</a>
+    <a onclick="go(7)" data-s="7">Cooperação</a>
+    <a onclick="go(8)" data-s="8">Parceiros</a>
+    <a onclick="go(9)" data-s="9">Contato</a>
   </nav>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -705,13 +711,14 @@ header.light .hamburger span{background:var(--dark)}
   <button class="mob-close" onclick="toggleMob()">✕</button>
   <a onclick="mgo(0)">Início</a>
   <a onclick="mgo(1)">Quem Somos</a>
-  <a onclick="mgo(2)">Linha do Tempo</a>
-  <a onclick="mgo(3)">Ciência</a>
-  <a onclick="mgo(4)">Portfólio</a>
-  <a onclick="mgo(5)">Projetos</a>
-  <a onclick="mgo(6)">Cooperação</a>
-  <a onclick="mgo(7)">Parceiros</a>
-  <a onclick="mgo(8)">Contato</a>
+  <a onclick="mgo(2)">Nosso Ecossistema</a>
+  <a onclick="mgo(3)">Linha do Tempo</a>
+  <a onclick="mgo(4)">Ciência</a>
+  <a onclick="mgo(5)">Portfólio</a>
+  <a onclick="mgo(6)">Congresso 2026</a>
+  <a onclick="mgo(7)">Cooperação</a>
+  <a onclick="mgo(8)">Parceiros</a>
+  <a onclick="mgo(9)">Contato</a>
 </div>
 
 <!-- SLIDES VIEWPORT -->
@@ -728,11 +735,11 @@ header.light .hamburger span{background:var(--dark)}
           <span class="pulse"></span>Grupo Silvestre Santé · Acre, Brasil
         </div>
         <h1 class="home-h1">
-          Saúde de<br><em>alto padrão</em><br>na Amazônia
+          Ciência que amplia o acesso.<br><em>Cuidado que transforma</em><br>a Amazônia Ocidental
         </h1>
-        <p class="home-p">Instituto dedicado à cardiologia, pesquisa científica aplicada e transformação do sistema de saúde na região amazônica — com rigor clínico, impacto social e visão estratégica.</p>
+        <p class="home-p">Instituto dedicado à prevenção, tratamento e pesquisa que transformam investimentos em acesso à saúde, conhecimento e impacto social mensurável.</p>
         <button class="btn-primary" onclick="go(1)">
-          Conhecer o Instituto
+          Conheça nosso impacto
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
         <div class="home-kpis">
@@ -756,8 +763,8 @@ header.light .hamburger span{background:var(--dark)}
       <div>
         <div class="section-eyebrow t-label" style="color:var(--green)">Quem Somos</div>
         <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em <strong style="font-weight:800">saúde</strong></h2>
-        <p class="about-p" style="margin-bottom:1rem">O <strong>Grupo Silvestre Santé</strong> é um ecossistema com base científica sólida, atuação clínica de referência e compromisso com a transformação social na Amazônia.</p>
-        <p class="about-p">Integramos prevenção, assistência, formação médica e pesquisa aplicada em um modelo único de cuidado integral — com inserção em bases científicas internacionais como o PubMed e presença no interior do Acre.</p>
+        <p class="about-p" style="margin-bottom:1rem">Uma organização da sociedade civil dedicada à pesquisa, ao ensino, à prevenção e ao desenvolvimento de projetos sociais em saúde.</p>
+        <p class="about-p">Conectamos conhecimentos clínicos e científico, inovação e parcerias estratégicas para ampliar o acesso à saúde, reduzir desigualdades e transformar investimentos em impactos sociais mensuráveis.</p>
         <div class="kpi-row">
           <div class="kpi-g"><div class="kpi-val">2017</div><div class="kpi-lbl">Início das atividades</div></div>
           <div class="kpi-g"><div class="kpi-val">+50</div><div class="kpi-lbl">Publicações indexadas</div></div>
@@ -771,7 +778,7 @@ header.light .hamburger span{background:var(--dark)}
           </div>
           <div>
             <div class="ptitle">Assistência Clínica</div>
-            <div class="ptext">Atendimento especializado em cardiologia com linha de cuidado estruturada e foco em pacientes vulneráveis do SUS.</div>
+            <div class="ptext">Atendimentos especializados em saúde com cuidados estruturados para populações com acesso limitado aos serviços de saúde.</div>
           </div>
         </div>
         <div class="pillar">
@@ -780,16 +787,7 @@ header.light .hamburger span{background:var(--dark)}
           </div>
           <div>
             <div class="ptitle">Prevenção em Massa</div>
-            <div class="ptext">Programas de rastreamento, orientação e prevenção para população geral, trabalhadores e comunidades vulneráveis.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="picon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          </div>
-          <div>
-            <div class="ptitle">Formação Médica</div>
-            <div class="ptext">Simpósios, capacitações e centro de habilidades para profissionais do SUS e da rede privada.</div>
+            <div class="ptext">Programas de rastreio, orientação e prevenção, para a promoção da equidade em saúde.</div>
           </div>
         </div>
         <div class="pillar">
@@ -797,8 +795,17 @@ header.light .hamburger span{background:var(--dark)}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <div>
-            <div class="ptitle">Pesquisa Científica</div>
-            <div class="ptext">Hub de produção científica aplicada com +50 publicações indexadas no PubMed e impacto em protocolos internacionais.</div>
+            <div class="ptitle">Pesquisa Clínica</div>
+            <div class="ptext">Hub de produção científica aplicada na Amazônia.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="picon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <div class="ptitle">Centro de Habilidades</div>
+            <div class="ptext">Simpósios e capacitações para profissionais do SUS e da rede privada.</div>
           </div>
         </div>
       </div>
@@ -820,7 +827,7 @@ header.light .hamburger span{background:var(--dark)}
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/></svg>
             Visão de Futuro
           </div>
-          <div class="mvv-text">Ser reconhecido, até 2035, como uma das principais plataformas amazônicas de saúde, pesquisa clínica, ensino, inovação e impacto social do Brasil, consolidando o Acre como território estratégico para geração de evidências científicas, cuidado especializado e soluções sustentáveis em saúde.</div>
+          <div class="mvv-text">Ser reconhecido, até 2035, como a principal plataforma amazônica de saúde, pesquisa clínica, ensino, inovação e impacto social, consolidando o Acre como território estratégico para geração de evidências científicas, cuidado especializado e soluções sustentáveis em saúde.</div>
         </div>
       </div>
 
@@ -887,8 +894,127 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 2 · LINHA DO TEMPO ━━ -->
-<section class="slide slide-dark" id="s2">
+<!-- ━━ 2 · NOSSO ECOSSISTEMA ━━ -->
+<section class="slide slide-light" id="s2">
+  <div class="inner">
+    <div class="section-eyebrow t-label" style="color:var(--green)">Plataforma Estratégica de Saúde, Ciência e Impacto</div>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:500;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:.5rem">Ecossistema <strong style="font-weight:800">Silvestre Santé</strong></h2>
+    <p class="about-p" style="margin-bottom:1.5rem">Uma solução integrada para comunidades, parceiros e investidores.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">1</div>
+        <div>
+          <div class="value-name">Acurácia <span class="eco-sub">— Pesquisa Clínica</span></div>
+          <ul class="eco-list">
+            <li>Estudos clínicos multicêntricos</li>
+            <li>Cardiologia, insuficiência cardíaca, hipertensão, obesidade e risco cardiovascular</li>
+            <li>Boas Práticas Clínicas, LGPD, CEP/CONEP e monitoramento</li>
+            <li>Geração de evidências e dados amazônicos</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">2</div>
+        <div>
+          <div class="value-name">Silvestre Santé <span class="eco-sub">— Assistência e Diagnóstico</span></div>
+          <ul class="eco-list">
+            <li>Consultas especializadas</li>
+            <li>Exames e diagnóstico</li>
+            <li>Acompanhamento longitudinal</li>
+            <li>Prevenção, rastreio e cuidado humanizado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">3</div>
+        <div>
+          <div class="value-name">iSanté <span class="eco-sub">— Impacto Social</span></div>
+          <ul class="eco-list">
+            <li>Projetos sociais e humanitários</li>
+            <li>Populações vulneráveis</li>
+            <li>Mulheres, crianças, idosos, migrantes e comunidades tradicionais</li>
+            <li>Ampliação de acesso e redução de desigualdades</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">4</div>
+        <div>
+          <div class="value-name">Ensino e Capacitação</div>
+          <ul class="eco-list">
+            <li>Formação profissional</li>
+            <li>Educação continuada</li>
+            <li>Pesquisa aplicada</li>
+            <li>Parcerias com universidades</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">5</div>
+        <div>
+          <div class="value-name">Inovação e Tecnologia</div>
+          <ul class="eco-list">
+            <li>IA aplicada à saúde</li>
+            <li>Soluções digitais</li>
+            <li>Dados, monitoramento e diagnóstico</li>
+            <li>Eficiência e escalabilidade</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">6</div>
+        <div>
+          <div class="value-name">Banco de Projetos Estruturados</div>
+          <ul class="eco-list">
+            <li>Projetos prontos para captação</li>
+            <li>Modelagem técnica e financeira</li>
+            <li>Governança, metas e indicadores</li>
+            <li>Ativação rápida de iniciativas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">7</div>
+        <div>
+          <div class="value-name">Parcerias Estratégicas e Captação</div>
+          <ul class="eco-list">
+            <li>Organismos nacionais e internacionais</li>
+            <li>Poder público e academia</li>
+            <li>Investidores ESG e filantropia</li>
+            <li>Patrocinadores e parceiros institucionais</li>
+          </ul>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-num">8</div>
+        <div>
+          <div class="value-name">Impacto, ESG e Visão 2035</div>
+          <ul class="eco-list">
+            <li>Saúde, ciência e impacto social na Amazônia</li>
+            <li>Qualidade de vida e desenvolvimento regional</li>
+            <li>Transparência, ética e sustentabilidade</li>
+            <li>Referência na Amazônia Ocidental até 2035</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mvv-block" style="margin-top:1.5rem">
+      <div class="mvv-label">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+        Proposta de Valor
+      </div>
+      <ul class="diff-list">
+        <li>Plataforma integrada de saúde, ciência e impacto social</li>
+        <li>Capacidade de execução, articulação e captação</li>
+        <li>Projetos escaláveis com impacto mensurável</li>
+        <li>Conexão entre Amazônia, inovação e investimento</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ━━ 3 · LINHA DO TEMPO ━━ -->
+<section class="slide slide-dark" id="s3">
   <div class="glow" style="opacity:.6"></div>
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.4)">Linha do Tempo · 2020 – 2025</div>
@@ -919,7 +1045,7 @@ header.light .hamburger span{background:var(--dark)}
             <div class="prog">
               <div class="prog-name">Programa de Atendimento COVID-19</div>
               <div class="prog-meta">
-                <div><div class="meta-k">Público</div><div class="meta-v">População geral</div></div>
+                <div><div class="meta-k">Público</div><div class="meta-v">Sociedade Acreana</div></div>
                 <div><div class="meta-k">Impacto</div><div class="meta-v">Atendimento direto e apoio em cenário de alta mortalidade</div></div>
               </div>
             </div>
@@ -958,14 +1084,14 @@ header.light .hamburger span{background:var(--dark)}
             <div class="prog">
               <div class="prog-name">Saúde em Movimento</div>
               <div class="prog-meta">
-                <div><div class="meta-k">Locais</div><div class="meta-v">Lago do Amor · Parque Chico Mendes</div></div>
-                <div><div class="meta-k">Impacto</div><div class="meta-v">Promoção de saúde e prevenção em espaços públicos</div></div>
+                <div><div class="meta-k">Público</div><div class="meta-v">Sociedade Acreana</div></div>
+                <div><div class="meta-k">Impacto</div><div class="meta-v">Promoção de saúde e prevenção em espaços públicos (Lago do Amor e Parque Chico Mendes)</div></div>
               </div>
             </div>
             <div class="prog">
               <div class="prog-name">Drive-Thru da Hipertensão</div>
               <div class="prog-meta">
-                <div><div class="meta-k">Público</div><div class="meta-v">População urbana</div></div>
+                <div><div class="meta-k">Público</div><div class="meta-v">Sociedade Acreana</div></div>
                 <div><div class="meta-k">Impacto</div><div class="meta-v">Rastreamento precoce de hipertensão</div></div>
               </div>
             </div>
@@ -1035,8 +1161,8 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 3 · PRODUÇÃO CIENTÍFICA ━━ -->
-<section class="slide slide-light" id="s3">
+<!-- ━━ 4 · PRODUÇÃO CIENTÍFICA ━━ -->
+<section class="slide slide-light" id="s4">
   <div class="inner">
     <div class="sci-grid">
       <div>
@@ -1101,17 +1227,17 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 4 · PORTFÓLIO ━━ -->
-<section class="slide slide-dark" id="s4">
+<!-- ━━ 5 · PORTFÓLIO ━━ -->
+<section class="slide slide-dark" id="s5">
   <div class="glow"></div>
   <div class="inner">
     <div class="port-head">
       <div>
         <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Portfólio de Investimento em Saúde</div>
-        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Projetos Prontos para Captação</h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Portfólio de Projetos Estratégicos</h2>
       </div>
       <div>
-        <div class="total-val">R$ 6,7 mi</div>
+        <div class="total-val">R$ 9,7 mi</div>
         <div class="total-lbl">Investimento Global do Portfólio</div>
       </div>
     </div>
@@ -1170,23 +1296,23 @@ header.light .hamburger span{background:var(--dark)}
       </div>
       <div class="pcard">
         <div>
-          <div class="ctag ctag-f">Formação</div>
-          <div class="pcard-name">Simpósio Silvestre Santé 360°</div>
-          <div class="pcard-desc">Evento internacional · Brasil, Peru e Bolívia · 200–300 participantes · formato hands-on.</div>
+          <div class="ctag ctag-a">Assistência</div>
+          <div class="pcard-name">Amazônia Sem Fronteiras</div>
+          <div class="pcard-desc">Assistência integral à saúde de migrantes e refugiados na fronteira amazônica, com prioridade para mulheres, crianças, gestantes, idosos e pessoas em maior vulnerabilidade social e sanitária. Execução prevista de agosto/2026 a julho/2028.</div>
         </div>
         <div class="pcard-foot">
-          <div class="pcard-metric">Alcance Internacional</div>
-          <div class="pcard-val">3 países</div>
-          <div class="pcard-metric pcard-metric2">Modelo</div>
-          <div class="pcard-val">Patrocinado</div>
+          <div class="pcard-metric">Beneficiários</div>
+          <div class="pcard-val">1.296 pessoas</div>
+          <div class="pcard-metric pcard-metric2">Investimento</div>
+          <div class="pcard-val">R$ 2,98M</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ━━ 5 · PROJETOS & RESULTADOS ━━ -->
-<section class="slide slide-tint" id="s5">
+<!-- ━━ 6 · PROJETOS & RESULTADOS ━━ -->
+<section class="slide slide-tint" id="s6">
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:var(--green)">Projetos · Resultados · Indicadores</div>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">A oportunidade</h2>
@@ -1212,7 +1338,7 @@ header.light .hamburger span{background:var(--dark)}
           <div class="rcard-desc">Não são ideias — têm base científica consolidada, capacidade instalada e execução comprovada por histórico de ações sociais.</div>
           <div class="m-row">
             <div class="m-item"><span class="m-val">5</span><span class="m-lbl">Projetos prontos</span></div>
-            <div class="m-item"><span class="m-val">R$ 6,7M</span><span class="m-lbl">Portfólio total</span></div>
+            <div class="m-item"><span class="m-val">R$ 9,7M</span><span class="m-lbl">Portfólio total</span></div>
           </div>
         </div>
         <div class="rcard rcard-light">
@@ -1233,13 +1359,17 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 6 · PORTFÓLIO CIENTÍFICO E CONTRATOS ━━ -->
-<section class="slide slide-dark" id="s6">
+<!-- ━━ 7 · PORTFÓLIO CIENTÍFICO E CONTRATOS ━━ -->
+<section class="slide slide-dark" id="s7">
   <div class="glow" style="opacity:.6"></div>
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Portfólio Científico</div>
-    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Cooperação Técnica</h2>
-    <p class="contracts-intro">A narrativa institucional do iSanté ganha força quando apresentada dentro do Ecossistema Silvestre Santé, pois os contratos firmados pela Acurácia/Clínica Silvestre Santé demonstram maturidade técnico-regulatória, capacidade de participação em estudos multicêntricos e presença em agendas nacionais e internacionais de saúde.</p>
+    <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Parcerias que transformam conhecimento em soluções para a saúde</h2>
+    <p class="contracts-intro">Fizemos 24 Pesquisas Clínicas que conectam a Amazônia à ciência global e geram impacto social regional.</p>
+    <div class="kpi-row" style="border-top:none;padding-top:0;margin-top:.25rem">
+      <div class="kpi-g"><div class="kpi-val" style="color:var(--white)">24</div><div class="kpi-lbl" style="color:rgba(252,252,252,.4)">Pesquisas Clínicas</div></div>
+      <div class="kpi-g"><div class="kpi-val" style="color:var(--white)">68</div><div class="kpi-lbl" style="color:rgba(252,252,252,.4)">Média de participantes por estudo</div></div>
+    </div>
 
     <div class="contracts-wrap">
       <div class="contract-row head">
@@ -1249,51 +1379,46 @@ header.light .hamburger span{background:var(--dark)}
       </div>
 
       <div class="contract-row">
-        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>VIP-ACS / PROADI-SUS / Einstein</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Síndrome coronariana aguda e vacinação contra influenza</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Pesquisa de interesse público em saúde, com foco em redução de eventos cardiovasculares maiores.</div>
+        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>VIP-ACS / Einstein, PROADI-SUS, Hospital de Base de Rio Branco e SESACRE</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Prevenção cardiovascular, interesse público e integração com o SUS</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Avaliar estratégia de vacinação contra influenza para reduzir eventos cardiovasculares graves após síndrome coronariana aguda.</div>
       </div>
       <div class="contract-row">
-        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>Coalizão I COVID-19 Brasil / HCor</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>COVID-19 e emergência sanitária</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Participação em resposta científica nacional durante crise sanitária, em articulação com hospital público.</div>
+        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>Coalizão I COVID-19 Brasil / HCor, Hospital de Base de Rio Branco e SESACRE</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Emergência sanitária e Infectologia</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Produzir evidências clínicas durante a pandemia e apoiar decisões terapêuticas em cenário de elevada incerteza sanitária.</div>
       </div>
       <div class="contract-row">
-        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>TRIPLA - LB2009 / Einstein</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Hipertensão arterial sistêmica</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Estudo nacional, fase III, multicêntrico, randomizado, duplo-cego e controlado em doença crônica altamente prevalente.</div>
+        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>TRIPLA, LB2009 / Einstein</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Hipertensão arterial, prevenção de agravos e doenças crônicas de alta prevalência</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Avaliar alternativa terapêutica para o controle da hipertensão arterial sistêmica em adultos.</div>
       </div>
       <div class="contract-row">
         <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>BalanceD-HF / AstraZeneca</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Insuficiência cardíaca e função renal comprometida</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Estudo de fase III em eventos de insuficiência cardíaca e morte cardiovascular.</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Insuficiência cardíaca, função renal e prevenção da mortalidade cardiovascular</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Avaliar abordagem terapêutica para reduzir eventos de insuficiência cardíaca e morte cardiovascular em pessoas com comprometimento renal.</div>
       </div>
       <div class="contract-row">
-        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>P-Monofer-CHF-02 / Pharmacosmos / ICON</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Insuficiência cardíaca crônica e deficiência de ferro</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Ensaio fase III sobre tratamento de deficiência de ferro em insuficiência cardíaca sintomática.</div>
+        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>P-Monofer-CHF-02 / Pharmacosmos e ICON</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Qualidade de vida, insuficiência cardíaca, deficiência de ferro e acompanhamento longitudinal</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Avaliar os efeitos do tratamento com ferro intravenoso em pessoas com insuficiência cardíaca e deficiência de ferro.</div>
       </div>
       <div class="contract-row">
         <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>MOVE-Lp(a) / Eli Lilly</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Lipoproteína(a), aterosclerose e risco cardiovascular</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Estudo de fase 3 sobre redução de eventos cardiovasculares maiores em adultos de alto risco.</div>
-      </div>
-      <div class="contract-row">
-        <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>Contrato Master / Novo Nordisk</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Plataforma continuada de estudos clínicos</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Base jurídica e operacional para contratação de estudos clínicos futuros.</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Inovação cardiovascular, prevenção de infarto, AVC e morte cardiovascular</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Investigar nova estratégia para reduzir eventos cardiovasculares maiores em adultos com lipoproteína(a) elevada.</div>
       </div>
       <div class="contract-row">
         <div class="c-study"><span class="c-lbl">Estudo / Parceiro</span>HF-POLARIS / Novo Nordisk</div>
-        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Insuficiência cardíaca, obesidade, morbidade e mortalidade</div>
-        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Estudo com previsão de 19 participantes randomizados no centro e recrutamento planejado por 24 meses.</div>
+        <div class="c-area"><span class="c-lbl">Área de Contribuição</span>Insuficiência cardíaca, obesidade, morbidade, mortalidade e inovação terapêutica</div>
+        <div class="c-value"><span class="c-lbl">Valor Estratégico</span>Avaliar eficácia e segurança de alternativa terapêutica para pessoas com insuficiência cardíaca e obesidade.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ━━ 7 · COOPERAÇÃO ━━ -->
-<section class="slide slide-light" id="s7">
+<!-- ━━ 8 · COOPERAÇÃO ━━ -->
+<section class="slide slide-light" id="s8">
   <div class="inner">
     <div class="section-eyebrow t-label" style="color:var(--green)">Rede de Apoio</div>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--dark);letter-spacing:-.01em">Parceiros</h2>
@@ -1317,20 +1442,15 @@ header.light .hamburger span{background:var(--dark)}
   </div>
 </section>
 
-<!-- ━━ 8 · CONTATO ━━ -->
-<section class="slide slide-dark" id="s8">
+<!-- ━━ 9 · CONTATO ━━ -->
+<section class="slide slide-dark" id="s9">
   <div class="glow"></div>
   <div class="inner">
     <div class="contact-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:rgba(252,252,252,.38)">Encerramento Institucional</div>
         <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:500;color:var(--white);letter-spacing:-.01em">Parceiros estratégicos para ampliar o impacto</h2>
-        <blockquote class="cquote">"Nossa prática clínica é orientada pela ciência — e trabalhamos com ciência orientada para impacto na vida real."</blockquote>
-        <ul class="seek-list">
-          <li>Parceiros para captação e financiamento de projetos</li>
-          <li>Investidores em saúde com visão de impacto social</li>
-          <li>Instituições para parcerias científicas e clínicas</li>
-        </ul>
+        <blockquote class="cquote">"Nossas cooperações institucionais trazem soluções colaborativas concretas para a saúde das comunidades atendidas."</blockquote>
       </div>
       <div>
         <div class="citem">
@@ -1348,7 +1468,7 @@ header.light .hamburger span{background:var(--dark)}
           </div>
           <div>
             <div class="citem-lbl">Organização</div>
-            <div class="citem-val">Instituto Isanté · Grupo Silvestre Santé</div>
+            <div class="citem-val">Instituto de Pesquisa e Ensino Silvestre Santé – iSanté · Ecossistema Silvestre Santé</div>
           </div>
         </div>
         <div class="citem">
@@ -1357,13 +1477,13 @@ header.light .hamburger span{background:var(--dark)}
           </div>
           <div>
             <div class="citem-lbl">Contato Institucional</div>
-            <div class="citem-val">contato@institutoisante.com.br</div>
+            <div class="citem-val">isanteac@gmail.com</div>
           </div>
         </div>
         <div class="cta-row">
-          <a class="btn-primary" href="mailto:contato@institutoisante.com.br">
+          <a class="btn-primary" href="mailto:isanteac@gmail.com">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Entrar em Contato
+            Construa uma Parceria Conosco
           </a>
           <button class="btn-outline" onclick="go(0)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -1399,11 +1519,12 @@ header.light .hamburger span{background:var(--dark)}
   <div class="dot d-light" onclick="go(6)"></div>
   <div class="dot d-light" onclick="go(7)"></div>
   <div class="dot d-light" onclick="go(8)"></div>
+  <div class="dot d-light" onclick="go(9)"></div>
 </div>
 
 <script>
-const N = 9;
-const DARK_SLIDES = new Set([0,2,4,6,8]);
+const N = 10;
+const DARK_SLIDES = new Set([0,3,5,7,9]);
 let cur = 0;
 let wLock = false;
 
