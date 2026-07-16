@@ -1526,7 +1526,6 @@ header.light .hamburger span{background:var(--dark)}
 const N = 10;
 const DARK_SLIDES = new Set([0,3,5,7,9]);
 let cur = 0;
-let wLock = false;
 
 function go(n){
   if(n<0||n>=N||n===cur) return;
@@ -1559,20 +1558,6 @@ function render(){
   document.getElementById('bprev').disabled = cur===0;
   document.getElementById('bnext').disabled = cur===N-1;
 }
-
-// Wheel
-document.addEventListener('wheel', e=>{
-  const sc = e.target.closest('.tl-content,.inner');
-  if(sc && sc.scrollHeight > sc.clientHeight){
-    const atTop = sc.scrollTop <= 1;
-    const atBot = sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 2;
-    if((e.deltaY<0 && !atTop)||(e.deltaY>0 && !atBot)) return;
-  }
-  if(wLock) return;
-  wLock = true;
-  setTimeout(()=>{ wLock=false; }, 720);
-  e.deltaY > 0 ? next() : prev();
-},{passive:true});
 
 // Keyboard
 document.addEventListener('keydown', e=>{
