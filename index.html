@@ -289,6 +289,10 @@ header.light .hamburger span{background:var(--dark)}
   display:flex;flex-direction:column;
   gap:.6rem;
 }
+#s2 .values-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
 .value-card{
   display:flex;gap:1rem;align-items:center;
   padding:1.1rem 1.3rem;border:1px solid var(--border);
@@ -777,7 +781,7 @@ header.light .hamburger span{background:var(--dark)}
   .inner{height:auto;overflow:visible;padding:5rem 1.75rem 3rem}
   .arrows,.dots{display:none}
   .about-grid,.sci-grid,.contact-grid,.home-wrap{grid-template-columns:1fr;gap:2.5rem}
-  .mvv-top{grid-template-columns:1fr}
+  .mvv-top,#s2 .values-grid{grid-template-columns:1fr}
   .contract-row{grid-template-columns:1fr;gap:.6rem}
   .contract-row.head{display:none}
   .c-lbl{
