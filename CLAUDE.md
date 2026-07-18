@@ -17,7 +17,6 @@ This repository holds both the public one-page website for **Instituto Isanté /
 
 | Folder | File | Purpose |
 |--------|------|---------|
-| `apresentacoes/` | `Apresentação Instituto Isanté (3).pdf` | Institutional presentation of Instituto Isanté |
 | `projetos/` | `Projeto_Amazonia_Sem_Fronteiras_24_meses_FINAL_04062026.pdf` | Final version of the "Amazônia Sem Fronteiras" 24-month project (finalized 2026-06-04). Distinct from the larger `assets/05-portfolio/pdf/Amazonia.pdf` linked on the site's Portfólio card. |
 | `portfolio-investimentos/` | `Portfolio de Investimentos em Projetos Silvestre Sante.docx` | Investment portfolio across Silvestre Santé projects |
 | `linha-do-tempo/` | `Linha do Tempo Ações Sociais Silvestre Sante.docx` | Timeline of social actions by Silvestre Santé |
