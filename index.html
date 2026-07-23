@@ -435,23 +435,32 @@ header.light .hamburger span{background:var(--dark)}
 /* ══════════════════════════════
    SLIDE 3 — CIÊNCIA
 ══════════════════════════════ */
-.sci-grid{
-  display:grid;grid-template-columns:1fr 1.15fr;
-  gap:4.5rem;align-items:start;height:100%;
-  padding-top:1.5rem;
+.sci-wrap{
+  display:flex;flex-direction:column;gap:1.5rem;
+  height:100%;padding-top:1.25rem;
+}
+.sci-top{
+  display:grid;grid-template-columns:1.5fr 1fr;
+  gap:2.5rem;align-items:center;
+}
+.sci-intro{max-width:none}
+.sci-stats-row{display:flex;justify-content:center;margin-top:1.5rem}
+.sci-carousel-wrap{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  min-height:0;
 }
 .pub-badge{
-  display:inline-flex;align-items:center;gap:.85rem;
-  padding:.85rem 1.35rem;background:var(--dark);
-  border-radius:12px;margin-top:1.75rem;
+  display:inline-flex;align-items:center;gap:.9rem;white-space:nowrap;
+  padding:.85rem 1.6rem;background:var(--dark);
+  border-radius:12px;
 }
 .pub-n{
   font-family:'Inter',sans-serif;
-  font-size:2.6rem;font-weight:800;color:var(--white);line-height:1;
+  font-size:2rem;font-weight:800;color:var(--white);line-height:1;
 }
 .pub-t{
-  font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
-  color:rgba(252,252,252,.55);line-height:1.4;
+  font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(252,252,252,.65);line-height:1.3;
 }
 .r-tags{display:flex;flex-direction:column;gap:.6rem;margin-top:1.5rem}
 .r-tag{
@@ -482,7 +491,7 @@ header.light .hamburger span{background:var(--dark)}
 .sci-title{font-size:.9rem;font-weight:600;color:var(--dark);margin-bottom:.3rem}
 .sci-desc{font-size:.78rem;color:var(--muted);line-height:1.55}
 .pubmed-box{
-  margin-top:1.5rem;padding:1.1rem 1.25rem;
+  padding:1.25rem 1.5rem;width:100%;
   background:var(--light);border:1px solid var(--border);border-radius:11px;
 }
 .pubmed-name{
@@ -490,6 +499,69 @@ header.light .hamburger span{background:var(--dark)}
   font-size:1rem;color:var(--green);margin-top:.35rem;
 }
 .pubmed-desc{font-size:.77rem;color:var(--muted);margin-top:.4rem;line-height:1.5}
+
+/* ── carrossel de publicações (documentos estilo A4) ── */
+.doc-carousel{display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.doc-stage{
+  display:flex;align-items:center;justify-content:center;gap:1.35rem;
+  padding:2rem 0;min-height:400px;
+}
+.doc-card{
+  width:112px;aspect-ratio:210/297;flex-shrink:0;position:relative;
+  background:var(--white);border:1px solid var(--border);border-radius:9px;
+  box-shadow:0 6px 16px rgba(10,48,40,.06);
+  display:flex;flex-direction:column;gap:.5rem;
+  padding:.85rem .8rem;overflow:hidden;cursor:pointer;
+  transform:scale(.68);opacity:.22;filter:saturate(.5);
+  transition:transform 420ms cubic-bezier(.4,0,.2,1),opacity 420ms ease,filter 420ms ease,width 420ms cubic-bezier(.4,0,.2,1),box-shadow 220ms ease;
+}
+.doc-card::after{
+  content:'';position:absolute;top:0;right:0;
+  border-width:0 14px 14px 0;border-style:solid;
+  border-color:var(--light) var(--border) transparent transparent;
+}
+.doc-card.doc-side{
+  width:168px;transform:scale(.88);opacity:.6;filter:saturate(.8);
+}
+.doc-card.doc-main{
+  width:238px;transform:scale(1.12);opacity:1;filter:none;
+  box-shadow:0 22px 46px rgba(10,48,40,.18);z-index:2;
+  padding:1.4rem 1.3rem;gap:.75rem;
+}
+.doc-card.doc-main:hover{box-shadow:0 26px 52px rgba(10,48,40,.24)}
+.doc-pmlabel{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);font-weight:700;
+}
+.doc-card.doc-main .doc-pmlabel{font-size:.66rem}
+.doc-title-en{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;color:var(--dark);line-height:1.35}
+.doc-card.doc-side .doc-title-en{font-size:.8rem}
+.doc-card.doc-main .doc-title-en{font-size:1.08rem}
+.doc-title-pt{
+  font-size:.62rem;color:var(--muted);line-height:1.4;font-style:italic;
+  padding-top:.5rem;border-top:1px dashed var(--border);
+}
+.doc-card.doc-side .doc-title-pt{font-size:.68rem}
+.doc-card.doc-main .doc-title-pt{font-size:.82rem;padding-top:.7rem}
+.doc-card:not(.doc-main) .doc-title-en,
+.doc-card:not(.doc-main) .doc-title-pt{
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.doc-arr{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--border);background:var(--white);color:var(--dark);
+  transition:all 220ms;
+}
+.doc-arr:hover{background:var(--green);border-color:var(--green);color:var(--white)}
+.doc-arr:disabled{opacity:.25;cursor:not-allowed}
+.doc-dots{display:flex;flex-direction:column;align-items:center;gap:.3rem;margin-top:.6rem}
+.doc-count{
+  font-size:.72rem;font-weight:600;letter-spacing:.06em;color:var(--muted);
+  font-variant-numeric:tabular-nums;
+}
+.doc-hint{font-size:.68rem;color:var(--muted);opacity:.7}
 
 /* ══════════════════════════════
    SLIDE 4 — PORTFÓLIO
@@ -789,7 +861,10 @@ header.light .hamburger span{background:var(--dark)}
   .slide{min-width:100%;height:auto;min-height:100svh}
   .inner{height:auto;overflow:visible;padding:5rem 1.75rem 3rem}
   .arrows,.dots{display:none}
-  .about-grid,.sci-grid,.contact-grid,.home-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .about-grid,.contact-grid,.home-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .sci-top{grid-template-columns:1fr;gap:1.5rem}
+  .sci-stats-row{flex-direction:column;width:100%}
+  .pubmed-box{max-width:none}
   .mvv-top,#s2 .values-grid{grid-template-columns:1fr}
   .contract-row{grid-template-columns:1fr;gap:.6rem}
   .contract-row.head{display:none}
@@ -806,6 +881,11 @@ header.light .hamburger span{background:var(--dark)}
   .rcard-dark{grid-row:span 1}
   .home-kpis{flex-wrap:wrap;gap:1.5rem}
   .partners-grid{grid-template-columns:repeat(4,1fr)}
+  .doc-far{display:none}
+  .doc-card.doc-side{width:150px}
+  .doc-card.doc-main{width:200px}
+  .doc-arr{width:36px;height:36px}
+  .doc-stage{min-height:320px}
 }
 @media(max-width:600px){
   .inner{padding:5rem 1.25rem 2.5rem}
@@ -816,6 +896,12 @@ header.light .hamburger span{background:var(--dark)}
   .partner-card{height:100px;padding:.65rem}
   .partner-card img{width:90px;height:36px}
   .home-kpis{gap:1.25rem}
+  .doc-carousel{gap:.5rem}
+  .doc-stage{gap:.5rem;min-height:260px}
+  .doc-side{display:none}
+  .doc-card.doc-main{width:180px;padding:1.1rem 1rem}
+  .doc-card.doc-main .doc-title-en{font-size:.86rem}
+  .doc-card.doc-main .doc-title-pt{font-size:.7rem}
 }
 </style>
 </head>
@@ -900,7 +986,7 @@ header.light .hamburger span{background:var(--dark)}
     <div class="about-grid">
       <div>
         <div class="section-eyebrow t-label" style="color:var(--green)">Quem Somos</div>
-        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Um hub de excelência em <strong style="font-weight:800">saúde</strong></h2>
+        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.85rem,3.2vw,2.85rem);font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1.25rem">Ciência, cuidado e inovação em um único <strong style="font-weight:800">ecossistema</strong></h2>
         <p class="about-p" style="margin-bottom:1rem">Uma organização da sociedade civil dedicada à pesquisa, ao ensino, à prevenção e ao desenvolvimento de projetos sociais em saúde.</p>
         <p class="about-p">Conectamos conhecimentos clínicos e científico, inovação e parcerias estratégicas para ampliar o acesso à saúde, reduzir desigualdades e transformar investimentos em impactos sociais mensuráveis.</p>
         <div class="kpi-row">
@@ -1290,63 +1376,37 @@ header.light .hamburger span{background:var(--dark)}
 <!-- ━━ 4 · PRODUÇÃO CIENTÍFICA ━━ -->
 <section class="slide slide-light" id="s4">
   <div class="inner">
-    <div class="sci-grid">
-      <div>
-        <div class="section-eyebrow t-label" style="color:var(--green)">Ciência & Inovação</div>
-        <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1rem">Produção Científica e Inovação em Cardiologia</h2>
-        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;max-width:400px">Hub de produção científica aplicada com impacto direto em prática clínica, protocolos assistenciais, políticas de saúde e formação médica.</p>
-        <div class="pub-badge">
-          <div class="pub-n">+50</div>
-          <div class="pub-t">Publicações<br>Científicas<br>Indexadas</div>
-        </div>
-        <div class="t-label" style="color:var(--muted);margin:1.6rem 0 .65rem">Principais Linhas de Pesquisa</div>
-        <div class="r-tags">
-          <span class="r-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
-            Cardiologia Hepática
-          </span>
-          <span class="r-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
-            Transplante e Avaliação Cardiovascular
-          </span>
-          <span class="r-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
-            Insuficiência Cardíaca e Biomarcadores
-          </span>
-          <span class="r-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
-            Cardiologia Clínica Geral
-          </span>
-        </div>
-      </div>
-      <div>
-        <div class="t-label" style="color:var(--muted);margin-bottom:1.1rem">Linha do Tempo Científica</div>
-        <div class="sci-tl">
-          <div class="sci-item">
-            <div class="sci-yr">2012 – 2016</div>
-            <div class="sci-title">Base Científica Sólida</div>
-            <div class="sci-desc">Cardiologia hepática · interações coração-fígado · avaliação cardiovascular em transplantes</div>
-          </div>
-          <div class="sci-item">
-            <div class="sci-yr">2018 – 2020</div>
-            <div class="sci-title">Avanço Clínico</div>
-            <div class="sci-desc">Biomarcadores · estratificação de risco · manejo da insuficiência cardíaca</div>
-          </div>
-          <div class="sci-item">
-            <div class="sci-yr">2021 – 2022</div>
-            <div class="sci-title">Consolidação Científica</div>
-            <div class="sci-desc">Atualizações em cardiologia clínica · produção contínua em alto volume</div>
-          </div>
-          <div class="sci-item">
-            <div class="sci-yr">2023 – 2024</div>
-            <div class="sci-title">Fronteira da Inovação</div>
-            <div class="sci-desc">Terapias emergentes · novas abordagens cardiovasculares · pesquisa contemporânea de alto impacto</div>
-          </div>
+    <div class="sci-wrap">
+      <div class="sci-top">
+        <div class="sci-intro">
+          <div class="section-eyebrow t-label" style="color:var(--green)">Ciência & Inovação</div>
+          <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.75rem,2.9vw,2.6rem);font-weight:700;line-height:1.2;letter-spacing:-.01em;color:var(--dark);margin-bottom:1rem">Produção Científica e Inovação em Cardiologia</h2>
+          <p style="font-size:.88rem;color:var(--muted);line-height:1.7;max-width:400px">Hub de produção científica aplicada com impacto direto em prática clínica, protocolos assistenciais, políticas de saúde e formação médica.</p>
         </div>
         <div class="pubmed-box">
           <div class="t-label" style="color:var(--muted)">Indexação Internacional</div>
           <div class="pubmed-name">PubMed · Bases Científicas Internacionais</div>
           <div class="pubmed-desc">Contribuições para diretrizes clínicas internacionais, melhoria de diagnósticos e redução da mortalidade cardiovascular.</div>
+        </div>
+      </div>
+      <div class="sci-carousel-wrap">
+        <div class="t-label" style="color:var(--muted);margin-bottom:.4rem;text-align:center">Publicações em Destaque</div>
+        <div class="doc-carousel">
+          <button class="doc-arr" id="docPrevBtn" onclick="docGo(-1)" aria-label="Publicação anterior">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <div class="doc-stage" id="docStage"></div>
+          <button class="doc-arr" id="docNextBtn" onclick="docGo(1)" aria-label="Próxima publicação">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+        <div class="doc-dots" id="docDots"></div>
+        <div class="doc-hint">Clique na publicação em destaque para abrir no PubMed</div>
+        <div class="sci-stats-row">
+          <div class="pub-badge">
+            <div class="pub-n">+50</div>
+            <div class="pub-t">Publicações Científicas Indexadas</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1765,6 +1825,111 @@ document.addEventListener('touchend', e=>{
     dx>0 ? next() : prev();
   }
 },{passive:true});
+
+// Ciência — carrossel de publicações (fonte: PubMed_silvestre_om_titulos_links.docx)
+// "pt" traduz o título oficial para leitura; quando o título indexado já é em português, "pt" é omitido.
+const SCI_DOCS = [
+  {en:"Diretriz Brasileira de Insuficiência Cardíaca Crônica e Aguda.", url:"https://pubmed.ncbi.nlm.nih.gov/30379264/"},
+  {en:"Heart transplantation: review.", pt:"Transplante cardíaco: revisão.", url:"https://pubmed.ncbi.nlm.nih.gov/26154552/"},
+  {en:"Cardiovascular Statistics - Brazil 2020.", pt:"Estatísticas Cardiovasculares - Brasil 2020.", url:"https://pubmed.ncbi.nlm.nih.gov/33027364/"},
+  {en:"Efficacy and Safety of a Novel Triple Single-Pill for Uncontrolled Hypertension: The OPTION TREAT Trial.", pt:"Eficácia e Segurança de um Novo Comprimido Único Triplo para Hipertensão Não Controlada: o Estudo OPTION TREAT.", url:"https://pubmed.ncbi.nlm.nih.gov/40892621/"},
+  {en:"Author's replay.", pt:"Resposta do autor.", url:"https://pubmed.ncbi.nlm.nih.gov/23745216/"},
+  {en:"Rediscovering Brazil: How We Prevent and Treat Cardiovascular Disease.", pt:"Redescobrindo o Brasil: Como Prevenimos e Tratamos Doenças Cardiovasculares.", url:"https://pubmed.ncbi.nlm.nih.gov/33566974/"},
+  {en:"Prevalence of Cardiovascular Complications in Malaria: A Systematic Review and Meta-Analysis.", pt:"Prevalência de Complicações Cardiovasculares na Malária: Revisão Sistemática e Meta-Análise.", url:"https://pubmed.ncbi.nlm.nih.gov/33724926/"},
+  {en:"Brazilian Society of Cardiology Guideline on Myocarditis - 2022.", pt:"Diretriz da Sociedade Brasileira de Cardiologia sobre Miocardite - 2022.", url:"https://pubmed.ncbi.nlm.nih.gov/35830116/"},
+  {en:"Dialysis parameters associated with SARS-CoV-2 infection and prognosis in end-stage kidney disease.", pt:"Parâmetros de diálise associados à infecção por SARS-CoV-2 e prognóstico na doença renal em estágio terminal.", url:"https://pubmed.ncbi.nlm.nih.gov/38738416/"},
+  {en:"Cardiac dysfunction related to cirrhosis.", pt:"Disfunção cardíaca relacionada à cirrose.", url:"https://pubmed.ncbi.nlm.nih.gov/24030080/"},
+  {en:"Hydroxychloroquine with or without Azithromycin in Mild-to-Moderate Covid-19.", pt:"Hidroxicloroquina com ou sem Azitromicina na Covid-19 Leve a Moderada.", url:"https://pubmed.ncbi.nlm.nih.gov/32706953/"},
+  {en:"Potential role of transthoracic echocardiography for screening LV systolic dysfunction in patients with a history of dengue infection. A cross-sectional and cohort study and review of the literature.", pt:"Papel potencial do ecocardiograma transtorácico na triagem de disfunção sistólica do VE em pacientes com histórico de dengue. Estudo transversal, de coorte e revisão da literatura.", url:"https://pubmed.ncbi.nlm.nih.gov/36399460/"},
+  {en:"Case-fatality From Orally-transmitted Acute Chagas Disease: A Systematic Review and Meta-analysis.", pt:"Letalidade da Doença de Chagas Aguda Transmitida por Via Oral: Revisão Sistemática e Meta-Análise.", url:"https://pubmed.ncbi.nlm.nih.gov/32772104/"},
+  {en:"Prevalence and Predictors of COVID-19 Long-Term Symptoms: A Cohort Study from the Amazon Basin.", pt:"Prevalência e Preditores de Sintomas Prolongados da COVID-19: Estudo de Coorte na Bacia Amazônica.", url:"https://pubmed.ncbi.nlm.nih.gov/37364863/"},
+  {en:"Frequency of Electrocardiographic Alterations and Pericardial Effusion in Patients With Uncomplicated Malaria.", pt:"Frequência de Alterações Eletrocardiográficas e Derrame Pericárdico em Pacientes com Malária Não Complicada.", url:"https://pubmed.ncbi.nlm.nih.gov/34906368/"},
+  {en:"Is self-rated health associated with cardiovascular risk factors and disease in a low-income setting? A cross-sectional study from the Amazon Basin of Brazil.", pt:"A autopercepção de saúde está associada a fatores de risco e doença cardiovascular em contexto de baixa renda? Estudo transversal na Bacia Amazônica do Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/36041756/"},
+  {en:"Previous Dengue Infection and Mortality in Coronavirus Disease 2019 (COVID-19).", pt:"Infecção Prévia por Dengue e Mortalidade na Doença pelo Coronavírus 2019 (COVID-19).", url:"https://pubmed.ncbi.nlm.nih.gov/33373433/"},
+  {en:"Frequency of pleural effusion in dengue patients by severity, age and imaging modality: a systematic review and meta-analysis.", pt:"Frequência de derrame pleural em pacientes com dengue por gravidade, idade e modalidade de imagem: revisão sistemática e meta-análise.", url:"https://pubmed.ncbi.nlm.nih.gov/37189054/"},
+  {en:"Multifaceted Strategy Based on Automated Text Messaging After a Recent Heart Failure Admission: The MESSAGE-HF Randomized Clinical Trial.", pt:"Estratégia Multifacetada Baseada em Mensagens de Texto Automatizadas Após Internação Recente por Insuficiência Cardíaca: Estudo Clínico Randomizado MESSAGE-HF.", url:"https://pubmed.ncbi.nlm.nih.gov/38055237/"},
+  {en:"Heart failure associated with imported malaria: a nationwide Danish cohort study.", pt:"Insuficiência cardíaca associada à malária importada: estudo de coorte nacional dinamarquês.", url:"https://pubmed.ncbi.nlm.nih.gov/34313024/"},
+  {en:"Tropical diseases and risk of hypertension in the Amazon Basin: a cross-sectional study.", pt:"Doenças tropicais e risco de hipertensão na Bacia Amazônica: estudo transversal.", url:"https://pubmed.ncbi.nlm.nih.gov/34775497/"},
+  {en:"β-Blocker therapy for cirrhotic cardiomyopathy: a randomized-controlled trial.", pt:"Terapia com betabloqueador para cardiomiopatia cirrótica: estudo randomizado controlado.", url:"https://pubmed.ncbi.nlm.nih.gov/29979644/"},
+  {en:"Rivaroxaban to prevent major clinical outcomes in non-hospitalised patients with COVID-19: the CARE - COALITION VIII randomised clinical trial.", pt:"Rivaroxabana para prevenir desfechos clínicos maiores em pacientes não hospitalizados com COVID-19: estudo clínico randomizado CARE - COALITION VIII.", url:"https://pubmed.ncbi.nlm.nih.gov/37223666/"},
+  {en:"Determinants and prognostic value of in-hospital infection in patients waiting for permanent pacemaker implantation.", pt:"Determinantes e valor prognóstico da infecção hospitalar em pacientes aguardando implante de marca-passo definitivo.", url:"https://pubmed.ncbi.nlm.nih.gov/36288783/"},
+  {en:"Prevalence of rheumatic heart disease in adults from the Brazilian Amazon Basin.", pt:"Prevalência de doença cardíaca reumática em adultos da Bacia Amazônica brasileira.", url:"https://pubmed.ncbi.nlm.nih.gov/35065154/"},
+  {en:"Emerging Topics Update of the Brazilian Heart Failure Guideline - 2021.", pt:"Atualização de Tópicos Emergentes da Diretriz Brasileira de Insuficiência Cardíaca - 2021.", url:"https://pubmed.ncbi.nlm.nih.gov/34133608/"},
+  {en:"Early-onset and late-onset heart failure after liver transplantation.", pt:"Insuficiência cardíaca de início precoce e tardio após transplante hepático.", url:"https://pubmed.ncbi.nlm.nih.gov/24123835/"},
+  {en:"Left ventricular function by strain in uncomplicated malaria: a prospective study from the Brazilian Amazon.", pt:"Função ventricular esquerda por strain na malária não complicada: estudo prospectivo na Amazônia brasileira.", url:"https://pubmed.ncbi.nlm.nih.gov/36460878/"},
+  {en:"Declining Lung Function and Cardiovascular Risk: The ARIC Study.", pt:"Declínio da Função Pulmonar e Risco Cardiovascular: o Estudo ARIC.", url:"https://pubmed.ncbi.nlm.nih.gov/30165982/"},
+  {en:"Reference values for left ventricular dimensions, systolic and diastolic function: a study from the Amazon Basin of Brazil.", pt:"Valores de referência para dimensões do ventrículo esquerdo e função sistólica e diastólica: estudo na Bacia Amazônica do Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/34807316/"},
+  {en:"Ferritin levels and risk of heart failure-the Atherosclerosis Risk in Communities Study.", pt:"Níveis de ferritina e risco de insuficiência cardíaca - o Estudo Atherosclerosis Risk in Communities.", url:"https://pubmed.ncbi.nlm.nih.gov/27976478/"},
+  {en:"Prevalence and Dynamic Changes in Lung Ultrasound Findings among Adults with Uncomplicated Malaria and Controls in the Amazon Basin, Brazil.", pt:"Prevalência e alterações dinâmicas nos achados de ultrassom pulmonar em adultos com malária não complicada e controles na Bacia Amazônica, Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/35405640/"},
+  {en:"Brazilian Guideline for the Evaluation and Diagnosis of Chest Pain in the Emergency Department - 2025.", pt:"Diretriz Brasileira para Avaliação e Diagnóstico da Dor Torácica no Departamento de Emergência - 2025.", url:"https://pubmed.ncbi.nlm.nih.gov/41379176/"},
+  {en:"Ideal Cardiovascular Health and Job Strain: A Cross-Sectional Study from the Amazon Basin.", pt:"Saúde Cardiovascular Ideal e Estresse Ocupacional: Estudo Transversal na Bacia Amazônica.", url:"https://pubmed.ncbi.nlm.nih.gov/30916204/"},
+  {en:"HFE H63D Polymorphism and the Risk for Systemic Hypertension, Myocardial Remodeling, and Adverse Cardiovascular Events in the ARIC Study.", pt:"Polimorfismo HFE H63D e o Risco de Hipertensão Sistêmica, Remodelamento Miocárdico e Eventos Cardiovasculares Adversos no Estudo ARIC.", url:"https://pubmed.ncbi.nlm.nih.gov/30571559/"},
+  {en:"Sex- and Age-Related Impact of the COVID-19 Pandemic on Emergency Department Visits for Chest Pain in Curitiba, Brazil.", pt:"Impacto Relacionado a Sexo e Idade da Pandemia de COVID-19 nas Visitas ao Pronto-Socorro por Dor Torácica em Curitiba, Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/36243615/"},
+  {en:"Association between vaccination and persistent COVID-19-related symptoms among patients with mild Omicron infection: A prospective cohort study.", pt:"Associação entre vacinação e sintomas persistentes relacionados à COVID-19 em pacientes com infecção leve por Ômicron: estudo de coorte prospectivo.", url:"https://pubmed.ncbi.nlm.nih.gov/39582794/"},
+  {en:"Image of the month: Ectopic ascites.", pt:"Imagem do mês: Ascite ectópica.", url:"https://pubmed.ncbi.nlm.nih.gov/22475959/"},
+  {en:"Temporal trends in the contribution of Chagas cardiomyopathy to mortality among patients with heart failure.", pt:"Tendências temporais da contribuição da cardiomiopatia chagásica na mortalidade de pacientes com insuficiência cardíaca.", url:"https://pubmed.ncbi.nlm.nih.gov/29523589/"},
+  {en:"Impact of the severity of end-stage liver disease in cardiac structure and function.", pt:"Impacto da gravidade da doença hepática terminal na estrutura e função cardíacas.", url:"https://pubmed.ncbi.nlm.nih.gov/23293198/"},
+  {en:"Cardiohepatic interactions--from humoral theory to organ transplantation.", pt:"Interações cardio-hepáticas - da teoria humoral ao transplante de órgãos.", url:"https://pubmed.ncbi.nlm.nih.gov/25004427/"},
+  {en:"Adiposity, body composition and ventricular-arterial stiffness in the elderly: the Atherosclerosis Risk in Communities Study.", pt:"Adiposidade, composição corporal e rigidez ventrículo-arterial em idosos: o Estudo Atherosclerosis Risk in Communities.", url:"https://pubmed.ncbi.nlm.nih.gov/29663586/"},
+  {en:"Serum B-type natriuretic peptide in the initial workup of patients with new onset ascites: a diagnostic accuracy study.", pt:"Peptídeo natriurético tipo B sérico na investigação inicial de pacientes com ascite de início recente: estudo de acurácia diagnóstica.", url:"https://pubmed.ncbi.nlm.nih.gov/23907731/"},
+  {en:"Low Education Levels Linked to Increased Mortality Following Acute Heart Failure Hospitalization in Brazil.", pt:"Baixa Escolaridade Associada a Maior Mortalidade Após Internação por Insuficiência Cardíaca Aguda no Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/40532444/"},
+  {en:"Temporal trends in the contribution of modifiable cardiovascular risk factors to cardiovascular and all-cause mortality in patients undergoing myocardial perfusion imaging in a large city in Brazil.", pt:"Tendências temporais da contribuição de fatores de risco cardiovascular modificáveis na mortalidade cardiovascular e geral em pacientes submetidos à cintilografia de perfusão miocárdica em uma grande cidade do Brasil.", url:"https://pubmed.ncbi.nlm.nih.gov/38754591/"},
+  {en:"Rosa dos Ventos Multicenter Cohort Study of Patients with Reduced or Mildly Reduced Ejection Fraction Heart Failure in Brazil: Rationale and Design.", pt:"Estudo de Coorte Multicêntrico Rosa dos Ventos de Pacientes com Insuficiência Cardíaca de Fração de Ejeção Reduzida ou Levemente Reduzida no Brasil: Racional e Desenho.", url:"https://pubmed.ncbi.nlm.nih.gov/39630818/"},
+  {en:"Emerging Topics in Heart Failure: COVID-19 and Heart Failure.", pt:"Tópicos Emergentes em Insuficiência Cardíaca: COVID-19 e Insuficiência Cardíaca.", url:"https://pubmed.ncbi.nlm.nih.gov/33295461/"},
+  {en:"Short-term diuretic withdrawal in stable outpatients with mild heart failure and no fluid retention receiving optimal therapy: a double-blind, multicentre, randomized trial.", pt:"Suspensão de curto prazo do diurético em pacientes ambulatoriais estáveis com insuficiência cardíaca leve e sem retenção de líquidos em terapia otimizada: estudo randomizado, duplo-cego e multicêntrico.", url:"https://pubmed.ncbi.nlm.nih.gov/31424503/"},
+  {en:"Design of a multifaceted strategy based on automated text messaging in patients with recent heart failure admission.", pt:"Desenho de uma estratégia multifacetada baseada em mensagens de texto automatizadas em pacientes com internação recente por insuficiência cardíaca.", url:"https://pubmed.ncbi.nlm.nih.gov/34535979/"},
+  {en:"Corrigendum to Association between vaccination and persistent COVID-19-related symptoms among patients with mild Omicron infection: A prospective cohort study.", pt:"Errata de: Associação entre vacinação e sintomas persistentes relacionados à COVID-19 em pacientes com infecção leve por Ômicron: estudo de coorte prospectivo.", url:"https://pubmed.ncbi.nlm.nih.gov/39968079/"},
+  {en:"Agreement of BNP and NT-proBNP and the influence of clinical and laboratory variables.", pt:"Concordância entre BNP e NT-proBNP e a influência de variáveis clínicas e laboratoriais.", url:"https://pubmed.ncbi.nlm.nih.gov/24136751/"},
+  {en:"Case 5: 50-year-old woman with restrictive cardiomyopathy, renal failure and proteinuria.", pt:"Caso 5: mulher de 50 anos com cardiomiopatia restritiva, insuficiência renal e proteinúria.", url:"https://pubmed.ncbi.nlm.nih.gov/20084321/"},
+  {en:"Stress-induced cardiomyopathy (takotsubo cardiomyopathy) after liver transplantation-report of two cases.", pt:"Cardiomiopatia induzida por estresse (cardiomiopatia takotsubo) após transplante hepático - relato de dois casos.", url:"https://pubmed.ncbi.nlm.nih.gov/23026629/"},
+  {en:"Transcatheter aortic valve implantation as rescue therapy for liver transplant candidates with aortic valve stenosis.", pt:"Implante de valva aórtica transcateter como terapia de resgate para candidatos a transplante hepático com estenose aórtica.", url:"https://pubmed.ncbi.nlm.nih.gov/24962070/"},
+  {en:"A New Risk Score Based on Machine Learning in Patients with Acute Heart Failure: The ML-HF score.", pt:"Um Novo Escore de Risco Baseado em Aprendizado de Máquina em Pacientes com Insuficiência Cardíaca Aguda: o Escore ML-HF.", url:"https://pubmed.ncbi.nlm.nih.gov/41563260/"},
+  {en:"Cardiopulmonary alterations by ultrasound in a patient with uncomplicated mixed malaria infection: a case report from the Amazon Basin.", pt:"Alterações cardiopulmonares por ultrassom em paciente com malária mista não complicada: relato de caso na Bacia Amazônica.", url:"https://pubmed.ncbi.nlm.nih.gov/34321001/"},
+  {en:"Anomalous right coronary artery arising from the pulmonary artery and constrictive pericarditis: an unusual association.", pt:"Artéria coronária direita anômala originada da artéria pulmonar e pericardite constritiva: associação incomum.", url:"https://pubmed.ncbi.nlm.nih.gov/24136766/"},
+  {en:"Digitally Enabled Quality Improvement Intervention and LDL-C Control in Atherosclerotic Cardiovascular Disease: The SAPPHIRE-LDL Cluster Randomized Clinical Trial.", pt:"Intervenção de Melhoria da Qualidade Habilitada Digitalmente e Controle do LDL-C na Doença Cardiovascular Aterosclerótica: Estudo Clínico Randomizado por Clusters SAPPHIRE-LDL.", url:"https://pubmed.ncbi.nlm.nih.gov/42485013/"},
+  {en:"Angiogenesis between coronary grafts through the aortic wall.", pt:"Angiogênese entre enxertos coronarianos através da parede aórtica.", url:"https://pubmed.ncbi.nlm.nih.gov/22192292/"},
+  {en:"Second generation drug-eluting stents versus bare-metal stents for percutaneous coronary intervention of the proximal left anterior descending artery: An analysis of the BASKET-PROVE I and II trials.", pt:"Stents farmacológicos de segunda geração versus stents metálicos convencionais na intervenção coronária percutânea da artéria descendente anterior proximal: análise dos estudos BASKET-PROVE I e II.", url:"https://pubmed.ncbi.nlm.nih.gov/28722266/"},
+  {en:"Primary results of the brazilian registry of atherothrombotic disease (NEAT).", pt:"Resultados primários do registro brasileiro de doença aterotrombótica (NEAT).", url:"https://pubmed.ncbi.nlm.nih.gov/38378735/"}
+];
+let docIdx = 0;
+
+function docWrap(i){
+  const n = SCI_DOCS.length;
+  return ((i % n) + n) % n;
+}
+function docCard(i, extraClass){
+  const idx = docWrap(i);
+  const d = SCI_DOCS[idx];
+  const isMain = extraClass === 'doc-main';
+  const openAttr = isMain
+    ? `onclick="window.open('${d.url}','_blank','noopener')"`
+    : `onclick="docGoTo(${idx})"`;
+  const ptBlock = (d.pt && d.pt !== d.en) ? `<div class="doc-title-pt">${d.pt}</div>` : '';
+  return `<div class="doc-card ${extraClass}" ${openAttr} role="button" tabindex="0" aria-label="${isMain ? 'Abrir publicação no PubMed' : 'Ver esta publicação'}">
+    <div class="doc-pmlabel">
+      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      PubMed
+    </div>
+    <div class="doc-title-en">${d.en}</div>
+    ${ptBlock}
+  </div>`;
+}
+
+function renderDocCarousel(){
+  const stage = document.getElementById('docStage');
+  if(!stage) return;
+  stage.innerHTML =
+    docCard(docIdx-2,'doc-far') + docCard(docIdx-1,'doc-side') + docCard(docIdx,'doc-main') +
+    docCard(docIdx+1,'doc-side') + docCard(docIdx+2,'doc-far');
+  document.getElementById('docDots').innerHTML =
+    `<span class="doc-count">${docIdx+1} / ${SCI_DOCS.length}</span>`;
+}
+function docGo(delta){
+  docIdx = docWrap(docIdx+delta);
+  renderDocCarousel();
+}
+function docGoTo(i){ docIdx = docWrap(i); renderDocCarousel(); }
+renderDocCarousel();
 
 // Timeline year tabs
 function yr(id, btn){
